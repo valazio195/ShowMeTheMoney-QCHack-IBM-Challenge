@@ -31,7 +31,7 @@ Ternary computers had been attempted before, as an implementation of classical c
 
 I included my mathematical analysis of the gates in "Ternary Grover gate analysis.pdf", which shows how to implement all the Ternary 1-qutrit permutative gates with just the 0->1 pulse and the 1->2 pulse from the qiskit textbook (Accessing Higher Energy States chapter). This was later used to actually implement these gates as pulse schedules by utilizing the 0->1 and 0->2 pi pulses. This is included in the "qutrit permutative gate" jupyter notebook.  
 
-The ternary superposition gate, or S gate was another gate that's used in the ternary Grover's algorithm that we wanted to synthesize. Although we couldn't test it and it's highly unlikely that it will yield us the desired result, we tried to make it by applying the pi/2 rotation to the qutrit in the x direction and performing Ra abi experiment to it. We attempted to find the approximate amplitude of the pulse needed to rotate the qutrit around the z-axis. This is shown in the jupyter notebook "ternary superposition gate".
+The ternary superposition gate, or S gate was another gate that's used in the ternary Grover's algorithm that we wanted to synthesize. Although we couldn't test it and it's highly unlikely that it will yield us the desired result, we tried to make it by applying the pi/2 rotation to the qutrit in the x direction and performing Rabi experiment to it. We attempted to find the approximate amplitude of the pulse needed to rotate the qutrit around the z-axis. This is shown in the jupyter notebook "ternary superposition gate".
 
 Working document for this project, with further outlines and rough notes:
 https://docs.google.com/document/d/1Zy9Lxo0mVYq2J1ukN5AREstCB512FrNiPokVhSTMgJI/edit
