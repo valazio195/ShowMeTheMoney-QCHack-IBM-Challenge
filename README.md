@@ -13,6 +13,12 @@ First, the only backend simulator with access to pulse was not working very well
 
 Furthermore, the Qiskit Quantum Experience went down the morning that the project was due, preventing us from being able to test some of our pulse-gates.  With all the issues, we weren't able to rapidly get through the gates that we needed to construct with Pulse.  We also had trouble figuring out how to implement custom multi-qubit control gates with Pulse, which has very little documentation and is very physics/math heavy.  This soaked up a lot of our time and prevented us from finishing.  However, we still implemented most of the gates needed for the ternary Grover's algorithm with Pulse, so we have most of the framework necessary for implementation.
 
+## Project Impact ##
+The primary current limiting factors in scaling quantum processors are the connectivity between qubits, and the error rates that come with each gate applied between state preparation and measurement. While extending into ternary computation may pose increased error rates due to decoherence, as well as requiring finer levels of resolution to control, it also directly reduces these other factors and may be a worthy trade-off.
+
+In particular, Grover’s algorithm is one that requires the use of n-ary controlled (Toffoli) gates on a quantum computer, which requires an exponentially increasing number of two-qubit gates for qubit processors. On qutrit processors, however, the extra degree of freedom enables us to design a recursion relation that only requires a number of two-qutrit gates linear in the length of the input. This theoretically allows us to out-perform binary qubits on error accumulation from running excessively many gates, especially on domains with lengths significant enough to consider quantum processing over classical searches. 
+
+
 ## Next Steps: ##
 
 If we had more time, we would be able to spend more time learning the multi-qubit control pulses and adapt it to the crucial multi-control Muthukrishnan-Stroud gate.  We also did not have time to implement the ternary phase gate used in the ternary diffusion operator.
