@@ -18,13 +18,20 @@ The primary current limiting factors in scaling quantum processors are the conne
 
 In particular, Grover’s algorithm is one that requires the use of n-ary controlled (Toffoli) gates on a quantum computer, which requires an exponentially increasing number of two-qubit gates for qubit processors. On qutrit processors, however, the extra degree of freedom enables us to design a recursion relation that only requires a number of two-qutrit gates linear in the length of the input. This theoretically allows us to out-perform binary qubits on error accumulation from running excessively many gates, especially on domains with lengths significant enough to consider quantum processing over classical searches. 
 
-
 ## Next Steps: ##
 
 If we had more time, we would be able to spend more time learning the multi-qubit control pulses and adapt it to the crucial multi-control Muthukrishnan-Stroud gate.  We also did not have time to implement the ternary phase gate used in the ternary diffusion operator.
+
+## Place in Research/Application Roadmap ##
+There is little groundwork published for any ternary, let alone n-ary extensions to quantum computation, and what we were able to find were primarily limited to the theoretical domain.  
+
+Ternary computers had been attempted before, as an implementation of classical computing, before it was abandoned in favour of the cheaper and more scalable binary models we have today. Without knowing exactly how the quantum computing race will pan out, we cannot rule out this possibility in quantum either. However, scaling to larger processors proves to be a significantly harder challenge for quantum devices as mentioned above. Attempts at fault-tolerance via error-correcting codes make this worse, as they require a large number of physical qubits to encode each logical qubit. Naturally then, it is important for the community to develop quantum computers that are as scalable as possible. Seeing as how some of the physical implementations of quantum computers naturally lend to 3-state computing, the barrier of independent hardware development does not hold us back from simply experimenting with existing systems such as Qiskit Pulse. We hope in the future that there will be more groundwork laid out for ternary/n-ary quantum systems just as there are pre-packaged logical circuits for binary qubits.
 
 ## Included Work: ##
 
 I included my mathematical analysis of the gates in "Ternary Grover gate analysis.pdf", which shows how to implement all the Ternary 1-qutrit permutative gates with just the 0->1 pulse and the 1->2 pulse from the qiskit textbook (Accessing Higher Energy States chapter). This was later used to actually implement these gates as pulse schedules by utilizing the 0->1 and 0->2 pi pulses. This is included in the "qutrit permutative gate" jupyter notebook.  
 
 The ternary superposition gate, or S gate was another gate that's used in the ternary Grover's algorithm that we wanted to synthesize. Although we couldn't test it and it's highly unlikely that it will yield us the desired result, we tried to make it by applying the pi/2 rotation to the qutrit in the x direction and performing Ra abi experiment to it. We attempted to find the approximate amplitude of the pulse needed to rotate the qutrit around the z-axis. This is shown in the jupyter notebook "ternary superposition gate".
+
+Working document for this project, with further outlines and rough notes:
+https://docs.google.com/document/d/1Zy9Lxo0mVYq2J1ukN5AREstCB512FrNiPokVhSTMgJI/edit
