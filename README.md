@@ -9,10 +9,8 @@ First, the only backend simulator with access to pulse was not working very well
 
 Furthermore, the Qiskit Quantum Experience went down the morning that the project was due, preventing us from being able to test some of our pulse-gates.  With all the issues, we weren't able to rapidly get through the gates that we needed to construct with Pulse.  We also had trouble figuring out how to implement custom multi-qubit control gates with Pulse, which has very little documentation and is very physics/math heavy.  This soaked up a lot of our time and prevented us from finishing.  However, we still implemented most of the gates needed for the ternary Grover's algorithm with Pulse, so we have most of the framework necessary for implementation.
 
-If we had more time, we would be able to spend more time learning the multi-qubit control pulses and adapt it to the crucial multi-control Muthukrishnan-Stroud gate.
+If we had more time, we would be able to spend more time learning the multi-qubit control pulses and adapt it to the crucial multi-control Muthukrishnan-Stroud gate.  We also did not have time to implement the ternary phase gate used in the ternary diffusion operator.
 
 I included my mathematical analysis of the gates in "Ternary Grover gate analysis.pdf", which shows how to implement all the Ternary 1-qutrit permutative gates with just the 0->1 pulse and the 1->2 pulse from the qiskit textbook (Accessing Higher Energy States chapter). This was later used to actually implement these gates as pulse schedules by utilizing the 0->1 and 0->2 pi pulses. This is included in the "qutrit permutative gate" jupyter notebook.  
 
 The ternary superposition gate, or S gate was another gate that's used in the ternary Grover's algorithm that we wanted to synthesize. Although we couldn't test it and it's highly unlikely that it will yield us the desired result, we tried to make it by applying the pi/2 rotation to the qutrit in the x direction and performing Ra abi experiment to it. We attempted to find the approximate amplitude of the pulse needed to rotate the qutrit around the z-axis. This is shown in the jupyter notebook "ternary superposition gate".
-
->>>>>>> Stashed changes
